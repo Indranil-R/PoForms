@@ -17,6 +17,19 @@ expo-env.d.ts
 *.key
 *.mobileprovision
 
+# Ignore build and cache folders
+.expo/
+.expo-shared/
+android
+android/.gradle/
+android/app/build/
+ios/Pods/
+ios/build/
+ios/.symlinks/
+ios/ExpoKitApp/
+.vscode/
+.easignore
+
 # Metro
 .metro-health-check*
 

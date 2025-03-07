@@ -37,8 +37,6 @@ export default function Index() {
         alert("Printing failed: " + error.message);
       }
     };
-
-
    
     const handleShare = async () => {
       try {
@@ -82,8 +80,6 @@ export default function Index() {
       }
     };
     
-    
-
     return (
       <View style={styles.card}>
         <View style={styles.cardHeader}>
@@ -91,11 +87,11 @@ export default function Index() {
           <View style={styles.iconContainer}>
             {pdfAsset && (
               <TouchableOpacity onPress={handlePrint} style={styles.iconButton}>
-                <Ionicons name="print-outline" size={24} color="#000" />
+                <Ionicons name="print-outline" size={24} style={styles.icon} />
               </TouchableOpacity>
             )}
             <TouchableOpacity onPress={handleShare} style={styles.iconButton}>
-              <Ionicons name="share-outline" size={24} color="#000" />
+              <Ionicons name="share-outline" size={24}  style={styles.icon}  />
             </TouchableOpacity>
           </View>
         </View>
@@ -167,7 +163,7 @@ export default function Index() {
                         : "chevron-down-outline"
                     }
                     size={24}
-                    color="#000"
+                    style={styles.icon}
                   />
                 </TouchableOpacity>
                 {expandedGroups[groupName] && (
@@ -188,66 +184,63 @@ const styles = StyleSheet.create({
   container: {
     flexGrow: 1,
     padding: 16,
-    backgroundColor: "#fff",
+    backgroundColor: "#fff", // White main background
   },
   groupContainer: {
-    marginBottom: 24,
-    backgroundColor: "#f7f7f7",
-    borderRadius: 10,
-    padding: 12,
+    marginBottom: 18,
+    backgroundColor: "#F6F6F6", // Off-white background
+    borderRadius: 12,
+    padding: 16,
     shadowColor: "#000",
-    shadowOpacity: 0.1,
-    shadowRadius: 4,
-    elevation: 2,
+    shadowOpacity: 0.08,
+    shadowRadius: 8,
+    shadowOffset: { width: 0, height: 2 },
+    elevation: 1,
   },
   groupHeader: {
     flexDirection: "row",
     justifyContent: "space-between",
     alignItems: "center",
-    borderBottomWidth: 1,
-    borderColor: "#ddd",
-    paddingBottom: 8,
-    marginBottom: 8,
+    padding: 6,
   },
   groupTitle: {
     fontSize: 18,
-    fontWeight: "bold",
-    color: "#333",
+    fontWeight: "600",
+    color: "#9C1D2A", // Red text for group titles
   },
   cardsContainer: {
-    marginTop: 8,
-    paddingHorizontal: 4,
+    marginTop: 12,
   },
   card: {
     padding: 16,
     backgroundColor: "#fff",
     borderRadius: 12,
-    borderWidth: 1,
-    borderColor: "#ddd",
+    borderLeftWidth: 3,
+    borderLeftColor: "#9C1D2A", // Red accent border on left side
     shadowColor: "#000",
-    shadowOffset: { width: 0, height: 2 },
-    shadowOpacity: 0.1,
-    shadowRadius: 4,
+    shadowOffset: { width: 0, height: 1 },
+    shadowOpacity: 0.08,
+    shadowRadius: 6,
     elevation: 2,
-    marginBottom: 12,
+    marginBottom: 16,
   },
   cardHeader: {
     flexDirection: "row",
     alignItems: "center",
     justifyContent: "space-between",
-    marginBottom: 8,
   },
   cardTitle: {
-    fontSize: 18,
-    fontWeight: "bold",
-    color: "#000",
+    fontSize: 16,
+    fontWeight: "500",
+    color: "#000", // Black text for titles
     flex: 1,
     flexWrap: "wrap",
-    marginRight: 8,
+    marginRight: 4,
   },
   cardDescription: {
-    fontSize: 14,
-    color: "#666",
+    fontSize: 12,
+    color: "rgba(0, 0, 0, 0.6)",
+    lineHeight: 20,
   },
   iconContainer: {
     flexDirection: "row",
@@ -256,24 +249,29 @@ const styles = StyleSheet.create({
   iconButton: {
     padding: 8,
     marginLeft: 8,
+    color: "#9C1D2A", // Red color for icons
+  },
+  icon: {
+    color: "#9A3A37",
   },
   searchContainer: {
     flexDirection: "row",
     alignItems: "center",
-    backgroundColor: "#f0f0f0",
-    borderRadius: 8,
-    paddingHorizontal: 8,
-    marginBottom: 16,
-    borderWidth: 1,
-    borderColor: "#ddd",
+    backgroundColor: "rgba(0, 0, 0, 0.05)",
+    borderRadius: 10,
+    paddingHorizontal: 12,
+    marginBottom: 20,
+    height: 40,
   },
   searchIcon: {
     marginRight: 8,
+    color: "#9C1D2A", // Red search icon
   },
   searchInput: {
     flex: 1,
-    height: 40,
+    height: 44,
     fontSize: 16,
     color: "#000",
+    fontWeight: "400",
   },
 });
